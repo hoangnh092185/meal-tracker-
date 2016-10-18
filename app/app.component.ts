@@ -9,18 +9,13 @@ import { Beer } from './beer.model';
       [childBeerList]="masterBeerList"
       (clickSender)="showDetails($event)"
     ></beer-list>
-<!--
-        <edit-beer
+
+    <edit-beer
           [childSelectedBeer]="selectedBeer"
           (doneClickedSender)="finishedEditing()"
-        ></edit-beer>
+    ></edit-beer>
 
-            <h4>Pints Count</h4>
 
-            <div class="jumbotron pints-left">Pints Remaining: {{beer.count}} <p id="demo"></p> </div>
-            <button class="btn btn-primary" (click)="sellBeer(beer)">Buy Pint</button>
-
-            !-->
         </div>
   `
 })
@@ -34,18 +29,12 @@ export class AppComponent {
     new Beer("organic survival", 15, 35, 5.8, "stout.png",4),
     new Beer("Deluxe organic ale", 16, 55, 7.0, "DOA.png",4)
   ];
-  // selectedBeer: Beer = null;
-  // showDetails(clickedBeer: Beer) {
-  //   this.selectedBeer = clickedBeer;
-  // }
-  // finishedEditing() {
-  //    this.selectedBeer = null;
-  // }
-  // sellBeer(thisBeer : Beer){
-  //   if(thisBeer.count > 0){
-  //     thisBeer.count -= 1;
-  //   }else {
-  //     alert("Keg empty.");
-  //   }
-  // }
+  selectedBeer: Beer = null;
+  showDetails(clickedBeer: Beer) {
+    this.selectedBeer = clickedBeer;
+  }
+  finishedEditing() {
+     this.selectedBeer = null;
+  }
+
 }
