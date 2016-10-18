@@ -2,6 +2,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { AppComponent }   from './app.component';
+// import { NewPintCountComponent } from './new-pint-count.component';
 
 
 @NgModule({
@@ -11,8 +12,8 @@ import { AppComponent }   from './app.component';
   ],
 
   declarations: [
-    AppComponent
-
+    AppComponent,
+    // NewPintCountComponent
   ],
 
   bootstrap: [ AppComponent ]
