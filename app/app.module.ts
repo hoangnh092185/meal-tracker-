@@ -2,7 +2,8 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { AppComponent }   from './app.component';
-// import { NewPintCountComponent } from './new-pint-count.component';
+import { BeerListComponent } from './beer-list.component';
+import { EditBeerComponent } from './edit-beer.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AppComponent }   from './app.component';
 
   declarations: [
     AppComponent,
-    // NewPintCountComponent
+    BeerListComponent,
+    EditBeerComponent
   ],
 
   bootstrap: [ AppComponent ]
