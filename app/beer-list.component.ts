@@ -24,6 +24,7 @@ import { Beer } from './beer.model';
         <div class="jumbotron pints-left">Pints Remaining: {{beer.count}}
           <p id="demo"></p>
           <button class="btn btn-primary" (click)="sellBeer(beer)">Buy Pint</button>
+          <button type="button" (click)="editButtonHasBeenClicked(beer)" name="button">Edit</button>
         </div>
       </div>
     </div>
@@ -34,6 +35,7 @@ import { Beer } from './beer.model';
   @Input() childBeerList: Beer[];
   @Output() clickSender = new EventEmitter();
   editButtonHasBeenClicked(beerToEdit: Beer) {
+    console.log("button clicked:" + beerToEdit.title);
     this.clickSender.emit(beerToEdit);
   }
   sellBeer(thisBeer : Beer){

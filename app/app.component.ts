@@ -4,19 +4,26 @@ import { Beer } from './beer.model';
 @Component({
     selector: 'my-app',
     template: `
-    <div class="container">
-    <beer-list
-      [childBeerList]="masterBeerList"
-      (clickSender)="showDetails($event)"
-    ></beer-list>
+    <new-beer
+      (newBeerSender)="addBeer($event)"
+    ></new-beer>
+    <div class="row">
+      <div class="col-sm-8 fluid">
+      <beer-list
+        [childBeerList]="masterBeerList"
+        (clickSender)="showDetails($event)"
+      ></beer-list>
+      </div>
+      <div class="col-sm-4 fluid">
+      <edit-beer
+            [childSelectedBeer]="selectedBeer"
+            (doneClickedSender)="finishedEditing()"
+      ></edit-beer>
+      </div>
+    </div>
 
-    <edit-beer
-          [childSelectedBeer]="selectedBeer"
-          (doneClickedSender)="finishedEditing()"
-    ></edit-beer>
 
 
-        </div>
   `
 })
 export class AppComponent {
@@ -35,6 +42,9 @@ export class AppComponent {
   }
   finishedEditing() {
      this.selectedBeer = null;
+  }
+  addBeer(newBeerFromChild: Beer){
+    this.masterBeerList.push(newBeerFromChild);
   }
 
 }
