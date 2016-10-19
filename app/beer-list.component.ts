@@ -5,7 +5,12 @@ import { Beer } from './beer.model';
   selector: 'beer-list',
   template: `
     <h4 class="header jumbotron">Beer List</h4>
-    <div class="row beer" *ngFor="let beer of childBeerList">
+    <select (change)="onChange($event.target.value)">
+      <option value="all" selected="selected">Show All</option>
+      <option value="nearlyEmpty">Show Nearly Empty</option>
+      <option value="notEmpty">Show Not Empty</option>
+    </select>
+    <div class="row beer" *ngFor="let beer of childBeerList | emptyness:selectedEmptyness">
       <div class="col-sm-8"><img src="./../resources/image/{{beer.image}}" alt="" /></div>
       <div class="col-sm-4 brew-note">
         <ul class="list-group jumbotron">
@@ -34,6 +39,11 @@ import { Beer } from './beer.model';
   export class BeerListComponent {
   @Input() childBeerList: Beer[];
   @Output() clickSender = new EventEmitter();
+  public selectedEmptyness: string = "all";
+  onChange(optionFromMenu) {
+    this.selectedEmptyness = optionFromMenu;
+    console.log(this.selectedEmptyness);
+  }
   editButtonHasBeenClicked(beerToEdit: Beer) {
     console.log("button clicked:" + beerToEdit.title);
     this.clickSender.emit(beerToEdit);

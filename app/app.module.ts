@@ -5,6 +5,7 @@ import { AppComponent }   from './app.component';
 import { BeerListComponent } from './beer-list.component';
 import { EditBeerComponent } from './edit-beer.component';
 import { NewBeerComponent } from './new-beer.component';
+import { EmptynessPipe } from './emptyness.pipe';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { NewBeerComponent } from './new-beer.component';
     BeerListComponent,
     EditBeerComponent,
     NewBeerComponent,
+    EmptynessPipe,
   ],
 
   bootstrap: [ AppComponent ]
