@@ -6,6 +6,13 @@ import { Meal } from './meal.model';
     template: `
     <div class="container">
       <h1 class="header jumbotron">Meal-Tracker</h1>
+        cosole.log(masterMealList);
+      <div class="jumbotron" *ngFor="let meal of masterMealList">
+        <h3>Meal:  {{meal.name}}</h3>
+        <h3>Detail: {{meal.detail}}</h3>
+        <h3>Calories: {{meal.calories}}</h3>
+          <button class="btn btn-primary" (click)="editButtonHasBeenClicked(currentMeal)">Edit</button>
+      </div>
         <meal-list
           [childMealList]="masterMealList"
           (clickSender)="showDetails($event)"
@@ -19,12 +26,3 @@ export class AppComponent {
     new Meal("Fries", "I only ate half of them", 365)
   ];
 }
-
-
-
-// <div class="jumbotron" *ngFor="let meal of masterMealList">
-//   <h3>Meal:  {{meal.name}}</h3>
-//   <h3>Detail: {{meal.detail}}</h3>
-//   <h3>Calories: {{meal.calories}}</h3>
-//     <button class="btn btn-primary" (click)="editButtonHasBeenClicked(currentMeal)">Edit</button>
-// </div>

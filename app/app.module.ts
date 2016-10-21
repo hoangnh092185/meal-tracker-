@@ -5,6 +5,8 @@ import { AppComponent }   from './app.component';
 import { MealListComponent } from './meal-list.component';
 import { EditMealComponent } from './edit-meal.component';
 import { AddMealComponent } from './add-meal.component';
+
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -14,8 +16,8 @@ import { AddMealComponent } from './add-meal.component';
   declarations: [
     AppComponent,
     MealListComponent,
-    EditMealComponent,
-    AddMealComponent,
+    // EditMealComponent,
+    // AddMealComponent,
   ],
 
   bootstrap: [ AppComponent ]
