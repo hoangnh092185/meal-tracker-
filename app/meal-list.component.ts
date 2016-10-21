@@ -14,9 +14,9 @@ import { Meal } from './meal.model';
 })
 export class MealListComponent {
   @Input() childMealList: Meal[];
-  @Output() clickSender = new EventEmitter();
-  editButtonMasBeenClicked(mealToEdit: Meal){
+  @Output() clickEditMealSender = new EventEmitter();
+  editButtonHasBeenClicked(mealToEdit: Meal){
     console.log("button clicked: "+ mealToEdit.name);
-    this.clickSender.emit(mealToEdit);
+    this.clickEditMealSender.emit(mealToEdit);
   }
 }
