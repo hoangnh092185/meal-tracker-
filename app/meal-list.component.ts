@@ -6,9 +6,7 @@ import { Meal } from './meal.model';
     template: `
   <h1>Meal-Tracker</h1>
   <div *ngFor="let currentMeal of childMealList">
-    <div class="jumbotron">
-      <h3>{{currentMeal.name}}<h3><br>
-    </div>
+      <h3>Meal :{{currentMeal.name}}<h3>
   </div>
   `
 })
