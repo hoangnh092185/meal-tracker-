@@ -5,9 +5,7 @@ import { Meal } from './meal.model';
     selector: 'meal-list',
     template: `
   <h1>Meal-Tracker</h1>
-  <div *ngFor="let currentMeal of childMealList">
-      <h3>Meal :{{currentMeal.name}}<h3>
-  </div>
+  
   `
 })
 export class MealListComponent {
