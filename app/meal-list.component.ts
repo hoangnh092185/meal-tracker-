@@ -8,7 +8,6 @@ import { Meal } from './meal.model';
   <div *ngFor="let currentMeal of childMealList">
     <div class="jumbotron">
       <h3>{{currentMeal.name}}<h3><br>
-      <button (click)="editButtonHasBeenClicked(currentMeal)">Edit</button>
     </div>
   </div>
   `

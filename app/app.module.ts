@@ -12,7 +12,7 @@ import { MealListComponent } from './meal-list.component';
 
   declarations: [
     AppComponent,
-  
+    MealListComponent,
   ],
 
   bootstrap: [ AppComponent ]

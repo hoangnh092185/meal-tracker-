@@ -4,13 +4,15 @@ import { Meal } from './meal.model';
 @Component({
     selector: 'my-app',
     template: `
-    <h1 class="header jumbotron">Meal-Tracker</h1>
-    <div class="jumbotron" *ngFor="let meal of masterMealList">
-      <h3> {{meal.name}}</h3>
-      <h3>{{meal.detail}}</h3>
-      <h3>{{meal.calories}}</h3>
+    <div class="container">
+      <h1 class="header jumbotron">Meal-Tracker</h1>
+      <div class="jumbotron" *ngFor="let meal of masterMealList">
+        <h3>Meal:  {{meal.name}}</h3>
+        <h3>Detail: {{meal.detail}}</h3>
+        <h3>Calories: {{meal.calories}}</h3>
+          <button class="btn btn-primary" (click)="editButtonHasBeenClicked(currentMeal)">Edit</button>
+      </div>
     </div>
-
   `
 })
 export class AppComponent {
