@@ -1,4 +1,4 @@
 export class Meal {
-  public count: number = 6;
-  constructor(public title: string, public plato: number, public ibu: number, public abv: number, public image: string, public price: number) { }
+  public count: number = 0;
+  constructor(public name: string, public detail: string, public calories: number) { }
 }
