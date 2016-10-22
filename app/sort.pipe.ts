@@ -9,14 +9,14 @@ import { Meal } from './meal.model';
 export class SortPipe implements PipeTransform {
   transform(input: Meal[], desiredSort){
     var output: Meal[] = [];
-    if( desiredSort === "High Calories"){
+    if( desiredSort === "highCalories"){
       for(var i=0;i <input.length; i++){
         if(input[i].calories >= 500){
           output.push(input[i]);
         }
       }
     return output;
-    } else if (desiredSort === "Low Calories"){
+  } else if (desiredSort === "lowCalories"){
       for(var i=0;i <input.length; i++){
         if(input[i].calories < 500){
           output.push(input[i]);
