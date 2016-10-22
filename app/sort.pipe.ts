@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular.core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { Meal } from './meal.model';
 
 @ Pipe({
@@ -9,7 +9,22 @@ import { Meal } from './meal.model';
 export class SortPipe implements PipeTransform {
   transform(input: Meal[], desiredSort){
     var output: Meal[] = [];
-    if( desiredSort = )
+    if( desiredSort === "High Calories"){
+      for(var i=0;i <input.length; i++){
+        if(input[i].calories >= 500){
+          output.push(input[i]);
+        }
+      }
+    return output;
+    } else if (desiredSort === "Low Calories"){
+      for(var i=0;i <input.length; i++){
+        if(input[i].calories < 500){
+          output.push(input[i]);
+        }
+      }
+      return output;
+    }else {
+      return input;
+    }
   }
-
 }

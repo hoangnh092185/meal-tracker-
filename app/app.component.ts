@@ -7,6 +7,11 @@ import { Meal } from './meal.model';
       <h1 class="header jumbotron">Meal-Tracker</h1>
       <div class="container">
       <div class="row">
+      <div clas="col-sm-12">
+        <add-meal
+        (newMealSender)="addMeal($event)"
+        ></add-meal>
+      </div>
         <div class="col-sm-8">
         <meal-list
           [childMealList]="masterMealList"
@@ -42,6 +47,3 @@ export class AppComponent {
     this.masterMealList.push(newMealFromChild);
   }
 }
-// <add-meal
-// [newMealSender]="addMeal($event)"
-// ></add-meal>
