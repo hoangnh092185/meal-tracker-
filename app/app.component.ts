@@ -23,9 +23,6 @@ import { Meal } from './meal.model';
           [childSelectedMeal]="selectedMeal"
           (doneClickedSender)="finishedEditing()"
         ></edit-meal>
-        <total-calories
-          [childTotalCalories]="selectedMeal"
-        ></total-calories>
         </div>
       </div>
     </div>
@@ -50,3 +47,7 @@ export class AppComponent {
     this.masterMealList.push(newMealFromChild);
   }
 }
+
+// <total-calories
+//   [childTotalCalories]="selectedMeal"
+// ></total-calories>
